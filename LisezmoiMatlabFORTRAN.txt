@@ -1,0 +1,50 @@
+Ensemble des Fichiers pour pouvoir appeler la routine FORTRAN implémentant
+l'algorithme Subspace_1
+
+1) le fichier courant LisezmoiMatlabFORTRAN.txt
+
+fichiers FORTRAN
+----------------
+2) subspace_iter_ev.F90, contient la routine correspondant à la version
+   Subspace_1A (une solution !)
+3) tools.f90 idem TP2
+
+fichiers interfaçage FORTRAN - Matlab
+-------------------------------------
+4) mex_C_glnxa64.xml
+5) mex_FORTRAN_glnxa64.xml
+6) mex_subspace_iter_ev.mexa64
+7) mex_subspace_iter_ev.c
+
+fichiers pour compiler
+----------------------
+8) Make.inc
+9) makefile
+
+fichiers matlab
+---------------
+10) fortran_subspace_iter_ev.m, la commande Matlab à utiliser
+11) exemple_matlabfortran.m, un exemple d'utilisation
+
+Utilisation
+===========
+0) création ed la variable d'environnement LD_PRELOAD
+
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libm.so:/usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+commande à mettre dans votre fichier ~/.bashrc
+
+1) Initialisation MEX
+
+make matlabsetup
+
+2) compilation
+
+make
+
+3) lancer matlab
+
+4) un exemple d'appel à fortran_subspace_iter_ev est donné dans
+   exemple_matlabfortran.m
+
+*) normalement vous n'avez aucun de ces fichiers à modifier
